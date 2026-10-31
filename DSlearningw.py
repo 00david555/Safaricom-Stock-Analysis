@@ -16,3 +16,14 @@ print(df.isnull().sum())
 
 # 6. Display column information
 print(df.info())
+# Calculate descriptive statistics
+
+mean_price = df["Close"].mean()
+
+median_price = df["Close"].median()
+
+standard_deviation = df["Close"].std()
+
+print("Mean:", mean_price)
+print("Median:", median_price)
+print("Standard Deviation:", standard_deviation)
