@@ -31,3 +31,9 @@ print("Standard Deviation:", standard_deviation)
 print("Average closing price:", df["Close"].mean())
 print("Highest closing price:", df["Close"].max())
 print("Lowest closing price:", df["Close"].min())
+
+#daily returns
+#\[R_t=\frac{P_t-P_{t-1}}{P_{t-1}}\times100\]
+df["Daily_Return"] = df["Close"].pct_change() * 100
+
+print(df["Daily_Return"].describe())
