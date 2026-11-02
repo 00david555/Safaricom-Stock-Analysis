@@ -27,3 +27,7 @@ standard_deviation = df["Close"].std()
 print("Mean:", mean_price)
 print("Median:", median_price)
 print("Standard Deviation:", standard_deviation)
+#stock_price_performance
+print("Average closing price:", df["Close"].mean())
+print("Highest closing price:", df["Close"].max())
+print("Lowest closing price:", df["Close"].min())
