@@ -41,3 +41,10 @@ print(df["Daily_Return"].describe())
 volatility = df["Daily_Return"].std()
 
 print("Daily volatility:", volatility)
+# 30-day rolling volatility
+
+df["Rolling_Volatility"] = (
+    df["Daily_Return"].rolling(window=30).std()
+)
+
+print(df["Rolling_Volatility"].tail(10))
