@@ -37,3 +37,7 @@ print("Lowest closing price:", df["Close"].min())
 df["Daily_Return"] = df["Close"].pct_change() * 100
 
 print(df["Daily_Return"].describe())
+#stock volatility and risk
+volatility = df["Daily_Return"].std()
+
+print("Daily volatility:", volatility)
