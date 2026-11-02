@@ -162,3 +162,50 @@ plt.grid(True)
 plt.tight_layout()
 
 plt.show()
+
+# Cumulative Stock Performance Analysis
+
+df["Date"] = pd.to_datetime(
+    df["Date"],
+    format="%d-%m-%Y"
+)
+
+df = df.sort_values("Date")
+
+# Calculate monthly closing prices
+monthly_prices = (
+    df.set_index("Date")["Close"]
+    .resample("ME")
+    .last()
+)
+
+# Calculate monthly returns
+monthly_returns = monthly_prices.pct_change()
+
+# Calculate cumulative returns
+cumulative_returns = (
+    (1 + monthly_returns).cumprod() - 1
+) * 100
+
+print("Cumulative Stock Returns:")
+print(cumulative_returns.tail(10))
+#visualising cumulative returns
+plt.figure(figsize=(12, 6))
+
+plt.plot(
+    cumulative_returns.index,
+    cumulative_returns,
+    label="Cumulative Returns"
+)
+
+plt.title("Safaricom Cumulative Stock Performance")
+plt.xlabel("Date")
+plt.ylabel("Cumulative Returns (%)")
+
+plt.axhline(y=0, linestyle="--")
+
+plt.legend()
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
