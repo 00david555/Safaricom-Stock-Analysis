@@ -317,3 +317,23 @@ plt.grid(True)
 
 plt.tight_layout()
 plt.show()
+
+# Daily Stock Returns Distribution
+
+df['Daily_Return_Pct'] = df['Close'].pct_change() * 100
+
+print("\nDaily Returns Summary:")
+print(df['Daily_Return_Pct'].describe())
+# Daily Returns Histogram
+
+plt.figure(figsize=(12, 6))
+
+plt.hist(df['Daily_Return_Pct'].dropna(), bins=50)
+
+plt.title('Safaricom Daily Stock Returns Distribution')
+plt.xlabel('Daily Returns (%)')
+plt.ylabel('Frequency')
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
