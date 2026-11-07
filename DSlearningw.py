@@ -251,3 +251,69 @@ plt.title('Safaricom Stock Correlation Matrix')
 plt.tight_layout()
 plt.show()
 
+
+# Safaricom Stock Price Trend
+
+plt.figure(figsize=(14, 6))
+
+plt.plot(df['Date'], df['Close'], label='Closing Price')
+
+plt.title('Safaricom PLC Historical Stock Prices')
+plt.xlabel('Date')
+plt.ylabel('Stock Price (KES)')
+
+plt.legend()
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# Stock Price with Moving Averages
+
+plt.figure(figsize=(14, 6))
+df['MA_20'] = df['Close'].rolling(window=20).mean()
+df['MA_50'] = df['Close'].rolling(window=50).mean()
+
+
+plt.plot(df['Date'], df['Close'], label='Closing Price')
+plt.plot(df['Date'], df['MA_20'], label='20-Day Moving Average')
+plt.plot(df['Date'], df['MA_50'], label='50-Day Moving Average')
+
+plt.title('Safaricom Stock Price and Moving Averages')
+plt.xlabel('Date')
+plt.ylabel('Price (KES)')
+
+plt.legend()
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+# Calculate Moving Averages
+
+# Verify calculations
+
+print("\nMoving Averages:")
+print(df[['Close', 'MA_20', 'MA_50']].tail())
+# Calculate Moving Averages
+
+df['MA_20'] = df['Close'].rolling(window=20).mean()
+df['MA_50'] = df['Close'].rolling(window=50).mean()
+
+
+# Plot Stock Price with Moving Averages
+
+plt.figure(figsize=(14, 6))
+
+plt.plot(df['Date'], df['Close'], label='Closing Price')
+plt.plot(df['Date'], df['MA_20'], label='20-Day Moving Average')
+plt.plot(df['Date'], df['MA_50'], label='50-Day Moving Average')
+
+plt.title('Safaricom Stock Price and Moving Averages')
+plt.xlabel('Date')
+plt.ylabel('Price (KES)')
+
+plt.legend()
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
