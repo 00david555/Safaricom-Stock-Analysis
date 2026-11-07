@@ -209,3 +209,17 @@ plt.grid(True)
 
 plt.tight_layout()
 plt.show()
+
+# Calculate maximum drawdown
+
+df['Previous_Peak'] = df['Close'].cummax()
+
+df['Drawdown'] = (
+    (df['Close'] - df['Previous_Peak'])
+    / df['Previous_Peak']
+) * 100
+
+maximum_drawdown = df['Drawdown'].min()
+
+print("Maximum Drawdown:", maximum_drawdown, "%")
+print(df.columns.tolist())
