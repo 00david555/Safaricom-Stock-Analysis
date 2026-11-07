@@ -217,9 +217,37 @@ df['Previous_Peak'] = df['Close'].cummax()
 df['Drawdown'] = (
     (df['Close'] - df['Previous_Peak'])
     / df['Previous_Peak']
+
 ) * 100
 
 maximum_drawdown = df['Drawdown'].min()
 
 print("Maximum Drawdown:", maximum_drawdown, "%")
 print(df.columns.tolist())
+
+# Correlation Analysis
+
+correlation_matrix = df.corr(numeric_only=True)
+
+print("\nCorrelation Matrix:")
+print(correlation_matrix)
+
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10, 7))
+
+plt.imshow(correlation_matrix, cmap='coolwarm', interpolation='nearest')
+
+plt.colorbar(label='Correlation')
+
+plt.xticks(range(len(correlation_matrix.columns)),
+           correlation_matrix.columns, rotation=45)
+
+plt.yticks(range(len(correlation_matrix.columns)),
+           correlation_matrix.columns)
+
+plt.title('Safaricom Stock Correlation Matrix')
+
+plt.tight_layout()
+plt.show()
+
