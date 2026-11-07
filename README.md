@@ -86,3 +86,45 @@ Every commit represents another milestone in my journey towards becoming a compe
 **Repository:** [Safaricom-Stock-Analysis](https://github.com/tuhtuhsahu-dev/Safaricom-Stock-Analysis)
 
 *"Learning by doing, one dataset at a time."*
+# NSE Safaricom Stock Market Analysis
+
+## Project Overview
+This project explores historical stock market data for Safaricom PLC, listed on the Nairobi Securities Exchange (NSE).
+
+The objective is to apply Python programming, statistical analysis and data visualisation techniques to understand historical stock performance and investigate financial risk indicators.
+
+## Technologies Used
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Git and GitHub
+
+## Key Areas of Analysis
+1. Data loading and cleaning.
+2. Descriptive statistical analysis.
+3. Daily and cumulative stock returns.
+4. Historical volatility.
+5. Rolling volatility.
+6. Moving averages.
+7. Correlation analysis.
+8. Daily returns distribution.
+9. Historical Value at Risk (VaR).
+10. Sharpe Ratio.
+11. Stock performance dashboard.
+
+## Project Objectives
+- Understand historical stock price movements.
+- Identify trends and patterns in stock returns.
+- Explore statistical relationships between market variables.
+- Apply financial risk measurement techniques.
+- Develop practical financial data analysis skills.
+
+## Limitations
+This project uses historical market data. Historical performance does not guarantee future returns. The analysis is educational and is not investment advice.
+
+## Future Improvements
+- Interactive dashboards using Streamlit.
+- Time-series forecasting.
+- Portfolio optimisation.
+- More advanced financial risk modelling.
